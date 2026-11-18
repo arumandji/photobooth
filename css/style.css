@@ -1,0 +1,295 @@
+:root {
+  --ink: #3c3440;
+  --muted: #827987;
+  --pink: #f6cbdc;
+  --rose: #e99ab9;
+  --cream: #fffaf7;
+  --mint: #cfe9df;
+  --border: #f1e4e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 10% 5%, #fbe3ec, transparent 35%),
+    radial-gradient(circle at 90% 90%, #dcefe7, transparent 35%),
+    var(--cream);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 5vw;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #d77fa2;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.main-content {
+  max-width: 1100px;
+  margin: 20px auto 60px;
+  padding: 0 20px;
+}
+
+.intro {
+  margin: 25px 0 30px;
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 0 0 10px;
+  font: clamp(34px, 5vw, 54px) Georgia, serif;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.studio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.panel {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #ffffffc9;
+  box-shadow: 0 14px 40px #8c61751a;
+}
+
+.camera-preview {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  border-radius: 17px;
+  background: #211d24;
+}
+
+.camera-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.placeholder {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.placeholder p {
+  color: #d9d1d8;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+}
+
+#countdown {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 800;
+  text-shadow: 0 4px 25px #000;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #f4e8ed;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--rose);
+  color: #fff;
+}
+
+.camera-tip {
+  margin: 12px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.settings-panel h2,
+.strip-section h2 {
+  margin: 4px 0 14px;
+  font: 25px Georgia, serif;
+}
+
+.field-label {
+  display: block;
+  margin: 15px 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.filter {
+  padding: 7px 5px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: #f8eff2;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filter.active {
+  border-color: var(--rose);
+  background: #fff;
+}
+
+.swatch {
+  display: block;
+  height: 38px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f7c9d9, #e7d9f4);
+}
+
+.swatch-soft {
+  filter: sepia(0.15) brightness(1.08);
+}
+
+.swatch-warm {
+  filter: sepia(0.35);
+}
+
+.swatch-mono {
+  filter: grayscale(1);
+}
+
+.swatch-pink {
+  filter: hue-rotate(320deg) saturate(0.8);
+}
+
+.swatch-vintage {
+  filter: sepia(0.5) contrast(0.9);
+}
+
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #eadde3;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.strip-section {
+  margin-top: 22px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.strip {
+  width: 180px;
+  padding: 10px 10px 22px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 7px 22px #4c34421c;
+}
+
+.strip img {
+  display: block;
+  width: 100%;
+  margin-bottom: 7px;
+}
+
+.strip-caption {
+  margin-top: 10px;
+  text-align: center;
+  font: 15px Georgia, serif;
+}
+
+.empty-state {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer {
+  padding: 25px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .studio {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    margin-top: 12px;
+  }
+
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .tagline {
+    display: none;
+  }
+}

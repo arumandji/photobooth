@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf7">
+  <title>Bloom Booth — Photo Booth</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">bloom<span>booth</span> ✿</div>
+    <div class="tagline">A LITTLE MOMENT, FOREVER</div>
+  </header>
+
+  <main class="main-content">
+    <section class="intro">
+      <h1>Your mini photo studio</h1>
+      <p>Take a few cute pictures, add a filter, and keep the memories.</p>
+    </section>
+
+    <section class="studio">
+      <div class="panel camera-panel">
+        <div class="camera-preview">
+          <video id="video" autoplay playsinline muted hidden></video>
+          <div class="placeholder" id="placeholder">
+            <div class="placeholder-icon">✿</div>
+            <strong>Your camera will appear here</strong>
+            <p>Allow camera access to start your photo session.</p>
+          </div>
+          <div id="countdown" aria-live="polite"></div>
+        </div>
+
+        <div class="controls">
+          <button class="btn btn-primary" id="start" type="button">Start camera</button>
+          <button class="btn btn-primary" id="shoot" type="button" disabled>Take photo strip</button>
+          <button class="btn" id="retake" type="button" disabled>Reset</button>
+        </div>
+
+        <p class="camera-tip">
+          Tip: allow camera permission. Your photos stay in this browser session.
+        </p>
+      </div>
+
+      <aside class="panel settings-panel">
+        <h2>Make it yours</h2>
+
+        <label class="field-label">Choose a filter</label>
+        <div class="filters">
+          <button class="filter active" type="button" data-filter="none">
+            <span class="swatch swatch-original"></span>Original
+          </button>
+          <button class="filter" type="button" data-filter="soft">
+            <span class="swatch swatch-soft"></span>Soft
+          </button>
+          <button class="filter" type="button" data-filter="warm">
+            <span class="swatch swatch-warm"></span>Warm
+          </button>
+          <button class="filter" type="button" data-filter="mono">
+            <span class="swatch swatch-mono"></span>B&amp;W
+          </button>
+          <button class="filter" type="button" data-filter="pink">
+            <span class="swatch swatch-pink"></span>Rosy
+          </button>
+          <button class="filter" type="button" data-filter="vintage">
+            <span class="swatch swatch-vintage"></span>Vintage
+          </button>
+        </div>
+
+        <label class="field-label" for="layout">Photo strip layout</label>
+        <select id="layout">
+          <option value="3">3 photos · classic strip</option>
+          <option value="4">4 photos · long strip</option>
+        </select>
+
+        <label class="field-label" for="caption">Caption</label>
+        <input id="caption" type="text" maxlength="28" placeholder="e.g. little moments ♡">
+      </aside>
+    </section>
+
+    <section class="strip-section">
+      <h2>Your photo strip</h2>
+      <div class="results" id="results">
+        <p class="empty-state">Your finished photo strip will show up here ✿</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Bloom Booth · Made for your little memories</footer>
+</body>
+</html>
